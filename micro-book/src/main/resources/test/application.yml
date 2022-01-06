@@ -1,0 +1,20 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: server-book
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        service: ${spring.application.name}
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://106.14.182.41:13306/answer?useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true
+    username: raysdba
+    password: RaysDba2020!!
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*/*.xml
+

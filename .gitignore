@@ -1,0 +1,9 @@
+# Project exclude paths
+/api-feign/target/
+/api-security/target/
+/common-utils/target/
+/logs/
+/micro-book/logs/
+/micro-book/target/
+.idea
+.iml
