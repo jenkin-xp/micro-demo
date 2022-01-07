@@ -11,16 +11,12 @@ public class MicroOrderApplicationTests extends BaseTest{
 
     @Test
     public void testMapper() {
-        for (int i = 0; i < 10; i++) {
-            String serverPort = bookFeign.getServerPort(i + 1);
-            System.out.println(serverPort);
-        }
+        bookFeign.getBookById(1);
     }
 
     @Test
     public void testSecurity() {
-        System.out.println();
-        System.out.println("F8F2CFF2-DA91-F259-E92C-DCB619D24AE0".length());
+        bookFeign.feignErrorTest();
     }
 
 }

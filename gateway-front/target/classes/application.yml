@@ -1,0 +1,19 @@
+server:
+  port: 8001
+  servlet:
+    context-path: /front
+
+spring:
+  application:
+    name: gateway-front
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        service: ${spring.application.name}
+        register-enabled: false
+
+ribbon:
+  ReadTimeout: 15000
+  ConnectTimeout: 10000
+  OkToRetryOnAllOperations: false

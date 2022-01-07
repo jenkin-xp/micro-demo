@@ -1,7 +1,10 @@
 package com.xiaorui.microbook.Rest;
 
+import com.netflix.hystrix.exception.HystrixBadRequestException;
 import com.xiaorui.api.book.vo.BookListVO;
 import com.xiaorui.api.constants.ServiceId;
+import com.xiaorui.api.exception.BizException;
+import com.xiaorui.api.exception.ExceptionCode;
 import com.xiaorui.microbook.mapper.BookMapper;
 import com.xiaorui.microbook.model.BookModel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +33,7 @@ public class BookRest {
     @GetMapping("getBookById")
     public BookListVO getBookById(@RequestParam("id") int id) {
         BookModel bookModel = bookMapper.selectById(id);
-        if (bookModel == null) return null;
+        if (bookModel == null) throw new BizException(ExceptionCode.BOOK_NOT_EXIST);
         BookListVO bookListVO = new BookListVO();
         bookListVO.setId(id);
         bookListVO.setBookName(bookModel.getBookName());
@@ -41,6 +44,11 @@ public class BookRest {
     @GetMapping("getServerPort")
     public String getServerPort(@RequestParam("times") int times) {
         return "第" + times + "次请求端口号为" + configurableEnvironment.getProperty("server.port");
+    }
+
+    @GetMapping("feignErrorTest")
+    public String feignErrorTest() {
+        throw new HystrixBadRequestException(ExceptionCode.FEIGN_ERROR.getMessage());
     }
 
 }
