@@ -25,7 +25,7 @@
         </dependency>
         <dependency>
             <groupId>com.xiaoruiedu</groupId>
-            <artifactId>common-utils</artifactId>
+            <artifactId>common</artifactId>
         </dependency>
     </dependencies>
 

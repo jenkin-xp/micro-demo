@@ -4,7 +4,7 @@ import com.xiaorui.api.book.feign.BookFeign;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class MicroOrderApplicationTests extends BaseOrderTest {
+public class MicroUserApplicationTests extends BaseTest {
 
     @Autowired
     private BookFeign bookFeign;

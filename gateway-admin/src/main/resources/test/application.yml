@@ -1,0 +1,29 @@
+server:
+  port: 8003
+  servlet:
+    context-path: /admin
+
+spring:
+  application:
+    name: gateway-admin
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        service: ${spring.application.name}
+        register-enabled: false
+
+user:
+  auth:
+    skipUrls:
+      - /**/login
+      - /**/register
+    crossDomains:
+      - all
+
+ribbon:
+  ReadTimeout: 15000
+  ConnectTimeout: 10000
+  OkToRetryOnAllOperations: false
+

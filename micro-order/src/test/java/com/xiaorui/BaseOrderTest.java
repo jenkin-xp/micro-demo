@@ -12,5 +12,5 @@ import org.springframework.test.context.junit4.SpringRunner;
  **/
 @SpringBootTest(classes = MicroOrderApplication.class)
 @RunWith(SpringRunner.class)
-public class BaseTest {
+public class BaseOrderTest {
 }
