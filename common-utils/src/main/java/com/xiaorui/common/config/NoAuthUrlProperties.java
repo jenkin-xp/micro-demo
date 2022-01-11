@@ -1,5 +1,6 @@
 package com.xiaorui.common.config;
 
+import com.xiaorui.common.annotation.ScanIgnore;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
@@ -15,6 +16,7 @@ import java.util.List;
  **/
 @Data
 @ConfigurationProperties(prefix = "user.auth")
+@ScanIgnore
 public class NoAuthUrlProperties {
 
     private LinkedHashSet<String> skipUrls;

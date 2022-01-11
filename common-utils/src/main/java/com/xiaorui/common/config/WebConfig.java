@@ -1,5 +1,6 @@
 package com.xiaorui.common.config;
 
+import com.xiaorui.common.annotation.ScanIgnore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -23,6 +24,7 @@ import java.util.List;
  */
 @EnableConfigurationProperties(NoAuthUrlProperties.class)
 @Configuration
+@ScanIgnore
 public class WebConfig implements WebMvcConfigurer {
 
     @Autowired

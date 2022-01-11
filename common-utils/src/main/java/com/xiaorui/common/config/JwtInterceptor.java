@@ -1,5 +1,6 @@
 package com.xiaorui.common.config;
 
+import com.xiaorui.common.annotation.ScanIgnore;
 import com.xiaorui.common.constants.HeaderValue;
 import com.xiaorui.common.annotation.JwtIgnore;
 import com.xiaorui.common.annotation.TokenIsIgnore;
@@ -29,6 +30,7 @@ import javax.servlet.http.HttpServletResponse;
  **/
 @Slf4j
 @Component
+@ScanIgnore
 public class JwtInterceptor implements AsyncHandlerInterceptor {
 
     @Autowired
