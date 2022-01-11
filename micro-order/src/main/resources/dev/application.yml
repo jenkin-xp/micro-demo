@@ -9,12 +9,12 @@ spring:
         server-addr: localhost:8848
         service: ${spring.application.name}
 
-  security:
-    user:
-      name: xiaoruiedu
-      password: 56f177d8-eea6-45c9-93c0-312f2bf88df6
-      roles:
-        - ADMIN
+#  security:
+#    user:
+#      name: xiaoruiedu
+#      password: 56f177d8-eea6-45c9-93c0-312f2bf88df6
+#      roles:
+#        - ADMIN
 
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
@@ -23,7 +23,9 @@ spring:
     password: RaysDba2020!!
 
 mybatis-plus:
-  mapper-locations: classpath*:mapper/*/*.xml
+  mapper-locations: classpath*:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用
 
 ribbon:
   ReadTimeout: 15000

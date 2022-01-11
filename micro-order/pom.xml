@@ -55,13 +55,9 @@
             <groupId>com.xiaoruiedu</groupId>
             <artifactId>api-feign</artifactId>
         </dependency>
-        <!--<dependency>
-            <groupId>com.xiaoruiedu</groupId>
-            <artifactId>api-security</artifactId>
-        </dependency>-->
         <dependency>
             <groupId>com.xiaoruiedu</groupId>
-            <artifactId>common-utils</artifactId>
+            <artifactId>api-security</artifactId>
         </dependency>
         <!-- 公共依赖 -->
     </dependencies>

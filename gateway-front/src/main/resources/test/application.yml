@@ -14,6 +14,14 @@ spring:
         service: ${spring.application.name}
         register-enabled: false
 
+user:
+  auth:
+    skipUrls:
+      - /**/login
+      - /**/register
+    crossDomains:
+      - all
+
 ribbon:
   ReadTimeout: 15000
   ConnectTimeout: 10000

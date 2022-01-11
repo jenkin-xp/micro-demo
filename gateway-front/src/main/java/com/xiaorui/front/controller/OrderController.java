@@ -1,9 +1,8 @@
 package com.xiaorui.front.controller;
 
-import com.xiaorui.api.book.feign.BookFeign;
-import com.xiaorui.api.book.vo.BookListVO;
 import com.xiaorui.api.constants.ServiceId;
-import com.xiaorui.common.annotation.JwtIgnore;
+import com.xiaorui.api.order.feign.OrderFeign;
+import com.xiaorui.api.order.vo.OrderListVO;
 import com.xiaorui.common.vo.ResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,16 +17,15 @@ import org.springframework.web.bind.annotation.RestController;
  * @Version V1.0
  **/
 @RestController
-@RequestMapping(ServiceId.MODEL_ID_BOOK)
-public class BookController {
+@RequestMapping(ServiceId.MODEL_ID_ORDER)
+public class OrderController {
 
     @Autowired
-    private BookFeign bookFeign;
+    private OrderFeign orderFeign;
 
-    @GetMapping("getBookById")
-    @JwtIgnore
-    public ResponseDTO<BookListVO> getBookById(@RequestParam("id") int id) {
-        return new ResponseDTO<>(bookFeign.getBookById(id));
+    @GetMapping("getOrderById")
+    public ResponseDTO<OrderListVO> getOrderById(@RequestParam("id") int id) {
+        return new ResponseDTO<>(orderFeign.getOrderById(id));
     }
 
 }

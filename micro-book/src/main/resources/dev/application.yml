@@ -9,21 +9,33 @@ spring:
         server-addr: localhost:8848
         service: ${spring.application.name}
 
-  security:
-    user:
-      name: xiaoruiedu
-      password: 56f177d8-eea6-45c9-93c0-312f2bf88df6
-      roles:
-        - ADMIN
-
+#  security:
+#    user:
+#      name: xiaoruiedu
+#      password: 56f177d8-eea6-45c9-93c0-312f2bf88df6
+#      roles:
+#        - ADMIN
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://106.14.182.41:13306/answer?useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true
     username: raysdba
     password: RaysDba2020!!
 
+  redis:
+    timeout: 300000
+    host: 47.100.245.63
+    port: 6379
+    password: Abcdef@123456
+    jedis:
+      pool:
+        max-active: 20
+        max-idle: 10
+        min-idle: 5
+        max-wait: 30000
+        time-between-eviction-runs: 30000
+
 mybatis-plus:
-  mapper-locations: classpath*:mapper/*/*.xml
+  mapper-locations: classpath*:mapper/*.xml
 
 ribbon:
   ReadTimeout: 15000

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaorui.mapper.OrderMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xiaorui.model.Order">
+        <id column="id" property="id" />
+        <result column="reader_book_id" property="readerBookId" />
+        <result column="reader_id" property="readerId" />
+        <result column="book_id" property="bookId" />
+        <result column="order_code" property="orderCode" />
+        <result column="transaction_id" property="transactionId" />
+        <result column="order_type" property="orderType" />
+        <result column="order_source" property="orderSource" />
+        <result column="app_source" property="appSource" />
+        <result column="order_desc" property="orderDesc" />
+        <result column="order_amount" property="orderAmount" />
+        <result column="order_status" property="orderStatus" />
+        <result column="payment_method" property="paymentMethod" />
+        <result column="create_time" property="createTime" />
+        <result column="payment_time" property="paymentTime" />
+        <result column="refund_time" property="refundTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="phone" property="phone" />
+        <result column="shipping_name" property="shippingName" />
+        <result column="shipping_phone" property="shippingPhone" />
+        <result column="shipping_address" property="shippingAddress" />
+        <result column="page_code" property="pageCode" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, reader_book_id, reader_id, book_id, order_code, transaction_id, order_type, order_source, app_source, order_desc, order_amount, order_status, payment_method, create_time, payment_time, refund_time, update_time, phone, shipping_name, shipping_phone, shipping_address, page_code
+    </sql>
+
+    <select id="selectOrderById" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM `order` WHERE id = #{id}
+    </select>
+
+</mapper>

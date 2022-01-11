@@ -1,9 +1,8 @@
 package com.xiaorui.api.config;
 
 import com.alibaba.fastjson.JSONObject;
-import com.xiaorui.api.exception.BizException;
-import com.xiaorui.api.exception.ExceptionCode;
-import com.xiaorui.api.exception.FeignBadRequestException;
+import com.xiaorui.common.exception.BizException;
+import com.xiaorui.common.exception.ExceptionCode;
 import feign.Response;
 import feign.Util;
 import feign.codec.ErrorDecoder;
