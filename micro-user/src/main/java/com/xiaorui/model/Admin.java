@@ -10,7 +10,7 @@ import lombok.Data;
 
 /**
  * <p>
- * 小睿后台用户管理
+ * 后台用户管理
  * </p>
  *
  * @author 夏鹏

@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * <p>
- * 小睿后台用户管理 服务实现类
+ * 后台用户管理 服务实现类
  * </p>
  *
  * @author 夏鹏
@@ -38,7 +38,9 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
         User user = new User();
         BeanUtils.copyProperties(userModel, user);
         String token = TokenUtil.getToken(user);
-        return new UserLoginResultVO(token);
+        UserLoginResultVO userLoginResultVO = new UserLoginResultVO();
+        userLoginResultVO.setToken(token);
+        return userLoginResultVO;
     }
 
     private Admin getByUsername(String username) {

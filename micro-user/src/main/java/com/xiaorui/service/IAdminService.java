@@ -7,7 +7,7 @@ import com.xiaorui.common.vo.ResponseDTO;
 
 /**
  * <p>
- * 小睿后台用户管理 服务类
+ * 后台用户管理 服务类
  * </p>
  *
  * @author 夏鹏

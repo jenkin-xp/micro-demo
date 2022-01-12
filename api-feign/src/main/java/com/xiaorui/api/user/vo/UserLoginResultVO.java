@@ -2,8 +2,6 @@ package com.xiaorui.api.user.vo;
 
 import lombok.Data;
 
-import java.io.Serializable;
-
 /**
  * @Description 登录VO
  * @Author hsd
@@ -11,14 +9,8 @@ import java.io.Serializable;
  * @Version V1.0
  **/
 @Data
-public class UserLoginResultVO implements Serializable {
+public class UserLoginResultVO {
 
     private String token;
 
-    public UserLoginResultVO() {
-    }
-
-    public UserLoginResultVO(String token) {
-        this.token = token;
-    }
 }
