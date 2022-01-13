@@ -1,6 +1,7 @@
 package com.xiaorui.common.exception.handler;
 
 import com.fasterxml.jackson.core.JsonParseException;
+import com.xiaorui.common.annotation.ScanIgnore;
 import com.xiaorui.common.exception.BizException;
 import com.xiaorui.common.exception.ExceptionCode;
 import com.xiaorui.common.exception.PermissionException;
@@ -25,6 +26,7 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 import java.util.List;
 
 @ControllerAdvice
+@ScanIgnore
 public class GlobalExceptionHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 

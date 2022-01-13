@@ -13,6 +13,9 @@ spring:
         service: ${spring.application.name}
         register-enabled: false
 
+  zipkin:
+    base-url: http://localhost:9411
+
 user:
   auth:
     skipUrls:

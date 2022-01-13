@@ -5,5 +5,6 @@
 /logs/
 /micro-book/logs/
 /micro-book/target/
+target
 .idea
 *.iml

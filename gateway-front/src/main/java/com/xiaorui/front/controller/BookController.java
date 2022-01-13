@@ -1,9 +1,11 @@
 package com.xiaorui.front.controller;
 
+import com.netflix.hystrix.exception.HystrixBadRequestException;
 import com.xiaorui.api.book.feign.BookFeign;
 import com.xiaorui.api.book.vo.BookListVO;
 import com.xiaorui.api.constants.ServiceId;
 import com.xiaorui.common.annotation.JwtIgnore;
+import com.xiaorui.common.exception.ExceptionCode;
 import com.xiaorui.common.vo.ResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +30,13 @@ public class BookController {
     @JwtIgnore
     public ResponseDTO<BookListVO> getBookById(@RequestParam("id") int id) {
         return new ResponseDTO<>(bookFeign.getBookById(id));
+    }
+
+    @GetMapping("feignErrorTest")
+    @JwtIgnore
+    public ResponseDTO<?> feignErrorTest() {
+        String feignErrorTest = bookFeign.feignErrorTest();
+        return new ResponseDTO<>(feignErrorTest);
     }
 
 }

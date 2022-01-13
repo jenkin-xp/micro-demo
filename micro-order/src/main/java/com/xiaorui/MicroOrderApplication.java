@@ -3,6 +3,7 @@ package com.xiaorui;
 import com.xiaorui.common.config.JwtInterceptor;
 import com.xiaorui.common.config.NoAuthUrlProperties;
 import com.xiaorui.common.config.WebConfig;
+import com.xiaorui.common.exception.handler.GlobalExceptionHandler;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,7 +15,7 @@ import org.springframework.context.annotation.FilterType;
 @SpringBootApplication
 @EnableDiscoveryClient
 @MapperScan(basePackages = "com.xiaorui.mapper")
-@ComponentScan(excludeFilters = {@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {WebConfig.class, JwtInterceptor.class, NoAuthUrlProperties.class})})
+@ComponentScan(excludeFilters = {@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {WebConfig.class, JwtInterceptor.class, NoAuthUrlProperties.class, GlobalExceptionHandler.class})})
 @EnableFeignClients(basePackages = {"com.xiaorui"})
 public class MicroOrderApplication {
 
