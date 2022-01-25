@@ -16,7 +16,7 @@ import org.springframework.context.annotation.FilterType;
 @EnableDiscoveryClient
 @MapperScan(basePackages = "com.xiaorui.mapper")
 @ComponentScan(excludeFilters = {@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {WebConfig.class, JwtInterceptor.class, NoAuthUrlProperties.class, GlobalExceptionHandler.class})})
-@EnableFeignClients(basePackages = {"com.xiaorui"})
+@EnableFeignClients(basePackages = {"com.xiaorui.api"})
 public class MicroOrderApplication {
 
     public static void main(String[] args) {
