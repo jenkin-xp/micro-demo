@@ -1,0 +1,24 @@
+server:
+  port: 9005
+spring:
+  application:
+    name: rabbitmq
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guset
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://106.14.182.41:13306/answer?useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true
+    username: raysdba
+    password: RaysDba2020!!
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+
+ribbon:
+  ReadTimeout: 15000
+  ConnectTimeout: 10000
+  OkToRetryOnAllOperations: false
