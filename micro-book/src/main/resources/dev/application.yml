@@ -20,9 +20,9 @@ spring:
 #        - ADMIN
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://106.14.182.41:13306/answer?useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true
-    username: raysdba
-    password: RaysDba2020!!
+    url: jdbc:mysql://localhost:3306/answer?useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true
+    username: root
+    password: root
 
   redis:
     timeout: 300000
