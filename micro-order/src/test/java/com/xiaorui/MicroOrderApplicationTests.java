@@ -11,7 +11,7 @@ public class MicroOrderApplicationTests extends BaseOrderTest {
 
     @Test
     public void testMapper() {
-        bookFeign.getBookById(1);
+        bookFeign.getBookById(12);
     }
 
     @Test
